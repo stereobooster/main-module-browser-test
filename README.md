@@ -10,9 +10,10 @@ yarn
 node src/index.js
 CommonJS
 
-node src/index.esm.js
+node --experimental-modules src/index.esm.js
 src/index.esm.js:1
 (function (exports, require, module, __filename, __dirname) { import test from "main-module-browser";
+                                                              ^^^^^^
 
 node --experimental-modules src/index.mjs
 (node:21541) ExperimentalWarning: The ESM module loader is experimental.
