@@ -15,6 +15,10 @@ node build/main.js
 npx webpack src/index.esm.js build/main.js
 node build/main.js
 ES module browser
+
+node --experimental-modules src/index.mjs
+(node:21541) ExperimentalWarning: The ESM module loader is experimental.
+CommonJS
 ```
 
 structure of `package.json`
