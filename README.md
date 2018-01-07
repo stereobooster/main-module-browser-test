@@ -1,5 +1,7 @@
 # Experiment
 
+discussion happens here https://github.com/stereobooster/package.json/issues/2
+
 ```sh
 node src/index.js
 CommonJS
