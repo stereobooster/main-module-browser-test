@@ -11,9 +11,7 @@ node src/index.js
 CommonJS
 
 node --experimental-modules src/index.esm.js
-src/index.esm.js:1
-(function (exports, require, module, __filename, __dirname) { import test from "main-module-browser";
-                                                              ^^^^^^
+SyntaxError: Unexpected token import
 
 node --experimental-modules src/index.mjs
 (node:21541) ExperimentalWarning: The ESM module loader is experimental.
@@ -36,6 +34,30 @@ node build/main.js
 npx webpack src/index.esm.js build/main.js --target node
 node build/main.js
 ES module
+
+# @std/esm
+
+node -r @std/esm src/index.mjs
+CommonJS
+
+node -r @std/esm src/index.esm.js
+SyntaxError: 'import' and 'export' may only be used in ES modules
+
+# with "@std/esm": { "esm": "js" } in package.json
+
+node -r @std/esm src/index.js
+CommonJS
+
+node -r @std/esm src/index.esm.js
+CommonJS
+
+# with "@std/esm": { "esm": "all" } in package.json
+
+node -r @std/esm src/index.js
+ReferenceError: require is not defined
+
+node -r @std/esm src/index.esm.js
+CommonJS
 ```
 
 structure of `package.json`
